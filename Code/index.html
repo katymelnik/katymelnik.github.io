@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<!--HEAD-->
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>ArtGallery</title>
+    <!-- Style css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<!--HEAD-->
+
+
+
+<body>
+    <img class="fullscreen" src="img/arhitektura_nebo_chb_138510_1920x1080.jpg" alt="">
+
+
+    <!--HEADER-->
+    <section id="header">
+        <div class="lefthead"><img src="img/left.jpg" alt=""></div>
+        <div class="center">
+            <div class="top">
+                <div class="renctangle">
+                    <div>
+                        <p>Art Gallery</p>
+                    </div>
+                </div>
+                <p>by WEBcarasiki</p>
+            </div>
+            <div class="bottom">
+                <a href="#">Художники</a>
+                <a href="#">Главная</a>
+                <a href="#">Контакты</a>
+            </div>
+        </div>
+        <div class="righthead"><img src="img/right.jpg" alt=""></div>
+    </section>
+    <!--HEADER-->
+
+
+    <!--MAIN-->
+    <section id="main">
+        <div class="item_icon1">
+            <div class="container">
+                <img class="icon1" src="img/icon_1.jpg" alt="">
+                <div class="description about">
+                    <div class="text">Пабло Пикассо</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item_icon2">
+            <div class="container">
+                <img class="icon2" src="img/icon_2.jpg" alt="">
+                <div class="description about">
+                    <div class="text">Фрида Кало</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item_icon3">
+            <div class="container">
+                <img class="icon3" src="img/icon_3.jpg" alt="">
+                <div class="description about">
+                    <div class="text">Клод Моне</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item_icon3">
+            <div class="container">
+                <img class="icon4" src="img/icon_4.jpg" alt="">
+                <div class="description about">
+                    <div class="text">Берта Моризо</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item_icon2">
+            <div class="container">
+                <img class="icon5" src="img/icon_5.jpg" alt="">
+                <div class="description about">
+                    <div class="text">Ван Гог</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item_icon1">
+            <div class="container">
+                <img class="icon6" src="img/icon_6.jpg" alt="">
+                <div class="description about">
+                    <div class="text">Огюст Ренуар</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--MAIN-->
+
+
+
+
+    <!-- REVIEWS-->
+    <section id="reviews">
+        <div class="revs">
+            <p>Ваши отзывы</p>
+        </div>
+
+        <div id="slider">
+            <div id="slider_box">
+                <ul>
+                    <li class="img_1">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+
+                    <li class="img_2">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+
+                    <li class="img_3">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+
+                    <li class="img_4">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+
+                    <li class="img_5">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+
+                    <li class="img_6">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+
+                    <li class="img_7">
+                        <img class="slider_item" src="img/screen.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+            <!--        slider_box-->
+
+            <div id="nav_slider">
+                <div id="left_nav">
+                    <img src="img/arrow.png" alt="">
+                </div>
+                <div id="right_nav">
+                    <img src="img/arrow1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!--    slider-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script>
+            function Slider(width_li, margin_right_li, col_view_img) {
+                var step = width_li + margin_right_li,
+                    slider_box_with = col_view_img * step - margin_right_li,
+                    $col_img = $("#slider_box>ul>li").length,
+                    col_main_left = 0,
+                    max_col_main_left = $col_img * step;
+                $("#slider_box").width(slider_box_with);
+                $("#slider_box>ul>li").width(width_li).css("margin-right", margin_right_li);
+                $("#left_nav").click(function() {
+                    if (col_main_left == 0) {
+                        col_main_left = -max_col_main_left + col_view_img * step;
+                    } else {
+                        col_main_left = col_main_left + step;
+                    }
+                    $("#slider_box>ul").css("margin-left", col_main_left + "px");
+                });
+                $("#right_nav").click(function() {
+                    if (-col_main_left == max_col_main_left - col_view_img * step) {
+                        col_main_left = 0;
+                    } else {
+                        col_main_left = col_main_left - step;
+                    }
+                    $("#slider_box>ul").css("margin-left", col_main_left + "px");
+                });
+            }
+            $(Slider(200, 10, 3));
+
+        </script>
+    </section>
+
+
+    <div class="picpic">
+        <img class="pic" src="img/0wq6Ce_-N7Q.jpg" alt="">
+    </div>
+
+    <!--Contacts-->
+    <section id="contacts">
+        <div class="top_footer">
+            <p>Наши контакты</p>
+        </div>
+        <div class="center_footer">
+
+            <div class="footer_item">
+                <img class="footer_icon" src="img/mail1.png" alt="">
+                <div class="footer_text">
+                    <p>Наша электронная почта:
+                        webcarasiki@mail.ru</p>
+                </div>
+            </div>
+
+            <div class="footer_item">
+                <img class="footer_icon" src="img/vk.png" alt="">
+                <div class="footer_text">
+                    <p>Мы Вконтакте:
+                        https://vk.com/webcarasiki</p>
+                </div>
+            </div>
+
+            <div class="footer_item">
+                <img class="footer_icon" src="img/inst.png" alt="">
+                <div class="footer_text">
+                    <p>Мы в Instagram:
+                        @WEBcarasiki</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="bottom_footer">
+            <p>2020©artgallery.by</p>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>
